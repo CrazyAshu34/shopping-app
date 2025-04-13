@@ -1,16 +1,15 @@
-import { useState } from "react";
 import "./App.css";
 import MyComponent from "./components/MyComponent";
-
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">app directory!</h1>
-      <MyComponent />
+      <div className="border p-4 ">
+        <p className="pb-5 text-center">APP - PAGE</p>
+        <hr />
+        <br />
+        <MyComponent />
+      </div>
     </>
   );
-}
-
+};
 export default App;
