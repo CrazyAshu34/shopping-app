@@ -1,14 +1,9 @@
-import React, { useMemo } from "react";
-const MyComponent = ({ handleClick }) => {
-  console.log("👶 Child rendered");
-  return (
-    <div>
-      <br />
-      <p>_Child btn</p>
-      <button onClick={handleClick}>i am clicking in it</button>
-    </div>
-  );
-};
+import React from 'react'
 
-// export default MyComponent;
-export default React.memo(MyComponent);
+const MyComponent = () => {
+  return (
+    <div>MyComponent</div>
+  )
+}
+
+export default MyComponent

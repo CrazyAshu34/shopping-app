@@ -56,7 +56,6 @@ button:disabled {
   pointer-events: none; /* disable button */
 }
 
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -67,5 +66,26 @@ button:disabled {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.579);
+  border-right: 3px solid rgba(132, 132, 132, 0.673); /* add one more side */
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
