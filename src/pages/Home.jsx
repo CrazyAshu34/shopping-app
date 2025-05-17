@@ -1,28 +1,55 @@
 import React from "react";
+import starLogo from "../assets/star-svgrepo-com.svg";
 const Home = () => {
   return (
     <div className="bg-[url('HomeImg/background_gradient.png')] bg-cover bg-center">
-      <div className="mx-auto min-h-[80vh] max-w-6xl px-4 py-6 pt-48">
-        {/* Main Heading */}
-        <h1 className="mb-[.6em] w-auto text-3xl leading-10 md:w-[30vw] md:text-5xl md:leading-15">
-          Transform Your Skin, Embrace Your Glow
-        </h1>
+      {/* girl bg image div*/}
 
-        {/* Subheading */}
-        <h2 className="mb-[1.8em]">
-          Makeup karo or cha jao dunia pe dunia tumhare kadam chumegi <br />
-          tumahre aage ek bada samundar hai. jise tum akele captan hi paar kar
-          skte ho.
-        </h2>
+      <div className="bg-[url('HomeImg/background_girl.png')] bg-size-[100%_auto] bg-position-[100%_39rem] bg-no-repeat md:size-auto md:bg-size-[auto] md:bg-position-[97%_10rem]">
 
-        {/* Contact Button */}
-        <button className="mb-[4em] cursor-pointer border border-transparent bg-[#1c0b0c] px-5 py-2 text-base font-medium text-white transition-colors duration-300 hover:bg-[#f38e8c]">
-          Contact Us
-        </button>
-        <div>
-        <span className="text-[#1c0b0c]">🙶</span>
+        <div className="mx-auto min-h-[80vh] max-w-6xl px-4 py-6 pt-30 pb-62 md:pt-48 md:pb-30">
+          {/* heading */}
+          <h1 className="mb-[.6em] w-[80vw] text-4xl leading-12 font-medium md:w-[30vw] md:text-5xl md:leading-15">
+            Transform Your Skin, Embrace Your Glow
+          </h1>
+
+          {/* Subheading */}
+          <h2 className="mb-[1.8em] w-[85vw] text-[14px] md:w-[26vw] md:text-base">
+            Do not forget body care! Exfoliate weekly and hydrate daily for
+            soft, glowing skin all over.
+          </h2>
+
+          {/* Contact Button */}
+          <button className="mb-[4em] cursor-pointer border border-transparent bg-[#1c0b0c] px-5 py-2 text-base font-medium text-white transition-colors duration-300 hover:bg-[#f38e8c]">
+            Contact Us
+          </button>
+          <div>
+            <div className="flex justify-start">
+              <p className="mr-4 text-5xl text-[#1c0b0c]">🙶</p>
+              <p className="flex items-center text-[1.125rem] font-medium">
+                Incredible Glow Boost
+              </p>
+            </div>
+            <h2 className="mb-5 ml-10 w-[60vw] text-[14px] md:w-[23vw] md:text-base">
+              Love your skin, nourish your beauty, and let your confidence shine
+              every day.
+            </h2>
+          </div>
+          <div className="flex flex-row">
+            <img
+              src="/HomeImg/girl_logo.jpg"
+              alt="girl_logo"
+              className="size-8 rounded-full"
+            />
+            <div className="mx-1 flex flex-row items-center">
+              <span className="w-28 border-0 border-t-1"></span>
+            </div>
+            <div className="flex items-center">
+              <p className="mr-2 ml-1">4.9</p>
+              <img src={starLogo} alt="" className="size-4" />
+            </div>
+          </div>
         </div>
-        <p className="mb-[1.8em] pl-6 text-lg">Incredible Glow Boost</p>
       </div>
     </div>
   );

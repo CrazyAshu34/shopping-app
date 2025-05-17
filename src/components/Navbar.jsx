@@ -8,7 +8,7 @@ const Navbar = () => {
     function handleScroll() {
       window.addEventListener("scroll", (event) => {
         const scrollPosition = window.scrollY;
-        console.log(scrollPosition);
+        // console.log(scrollPosition);
         if (scrollPosition >= 80) {
           setNavColor(true);
         } else {
