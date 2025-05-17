@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 const useFetch = () => {
-    const [data, setData] = useState(null);
-    const [loading, setLoading ] = useState(true);
-    const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(()=>{
-        fetch() 
-    })
+  useEffect(() => {
+    fetch();
+  });
 
-  return (
-    <div>useFetch</div>
-  )
-}
+  return <div>useFetch</div>;
+};
 
-export default useFetch
+export default useFetch;
