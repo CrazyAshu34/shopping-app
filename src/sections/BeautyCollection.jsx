@@ -3,7 +3,7 @@ import ButtonPrimary from "../components/ButtonPrimary";
 const BeautyCollection = () => {
   return (
     <>
-      <div className="mx-auto min-h-[80vh] max-w-6xl px-4 py-2 pt-[50px] pb-62 md:pt-[100px] md:pb-30">
+      <div className="md:px-0 px-4 mx-auto min-h-[80vh] max-w-6xl pt-[50px] md:pt-[100px] ">
         <div className="mb-[2rem] flex flex-col items-center justify-center md:flex-row md:justify-between">
           <h1 className="mb-5 text-center text-[32px] font-medium md:mb-auto md:text-4xl">
             Beauty Collection
@@ -19,7 +19,7 @@ const BeautyCollection = () => {
               <img
                 src="/HomeImg/cat_1.png"
                 alt="item"
-                className="h-[70%] w-[90%] m-auto"
+                className="m-auto h-[70%] w-[90%]"
               />
               <div className="mb-5 ml-5 flex flex-col justify-between gap-3">
                 <p className="text-xl font-medium">Skincare Cream Tube</p>
@@ -33,7 +33,7 @@ const BeautyCollection = () => {
               <img
                 src="/HomeImg/cat_2.png"
                 alt="item"
-                className="h-[70%] w-[90%] m-auto"
+                className="m-auto h-[70%] w-[90%]"
               />
               <div className="mb-5 ml-5 flex flex-col justify-between gap-3">
                 <p className="text-xl font-medium">SCosmetic Skincare Cream</p>
@@ -48,7 +48,7 @@ const BeautyCollection = () => {
               <img
                 src="/HomeImg/cat_3.png"
                 alt="item"
-                className="h-[70%] w-[90%] m-auto"
+                className="m-auto h-[70%] w-[90%]"
               />
               <div className="mb-5 ml-5 flex flex-col justify-between gap-3">
                 <p className="text-xl font-medium">Radiant Glow Serum</p>

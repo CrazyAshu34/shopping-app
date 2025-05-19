@@ -30,10 +30,14 @@ const Navbar = () => {
   ];
 
   return (
+    // <nav
+    //   className={`fixed top-0 left-0 z-50 w-full ${navColor ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent text-white"} text-white shadow`}
+    // >
     <nav
-      className={`fixed top-0 left-0 z-50 w-full ${navColor ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent text-white"} text-white shadow`}
+      // className={`z-50 w-full bg-[url('HomeImg/background_gradient.png')] `}
+      className={`z-50 w-full absolute top-0 left-0 `}
     >
-      <div className="mx-auto max-w-6xl px-4 py-6">
+      <div className="mx-auto max-w-6xl py-6">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
             <a href="#">

@@ -2,6 +2,7 @@ import React from "react";
 import starLogo from "../assets/star-svgrepo-com.svg";
 import BeautyCollection from "../sections/BeautyCollection";
 import ButtonPrimary from "../components/ButtonPrimary";
+import BeautyBanner from "../sections/BeautyBanner";
 const Home = () => {
   return (
     <>
@@ -9,7 +10,7 @@ const Home = () => {
         {/* girl bg image div*/}
 
         <div className="bg-[url('HomeImg/background_girl.png')] bg-size-[100%_auto] bg-position-[100%_39rem] bg-no-repeat md:size-auto md:bg-size-[auto] md:bg-position-[97%_10rem]">
-          <div className="mx-auto min-h-[80vh] max-w-6xl px-4 py-6 pt-30 pb-62 md:pt-48 md:pb-30">
+          <div className="mx-auto min-h-[80vh] max-w-6xl md:px-0 px-4 py-6 pt-30 pb-62 md:pt-48 md:pb-30">
             {/* heading */}
             <h1 className="mb-[.6em] w-[80vw] text-4xl leading-12 font-medium md:w-[30vw] md:text-5xl md:leading-15">
               Transform Your Skin, Embrace Your Glow
@@ -24,7 +25,7 @@ const Home = () => {
             {/* Contact Button */}
             <ButtonPrimary className="mb-[4em]">Contact Us</ButtonPrimary>
 
-            <div>
+            <div className="">
               <div className="flex justify-start">
                 <p className="mr-4 text-5xl text-[#1c0b0c]">🙶</p>
                 <p className="flex items-center text-[1.125rem] font-medium">
@@ -55,6 +56,8 @@ const Home = () => {
       </div>
       {/* second fold */}
       <BeautyCollection />
+      {/* Beauty banner */}
+      <BeautyBanner />
     </>
   );
 };
