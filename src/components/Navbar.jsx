@@ -37,7 +37,7 @@ const Navbar = () => {
       // className={`z-50 w-full bg-[url('HomeImg/background_gradient.png')] `}
       className={`z-50 w-full absolute top-0 left-0 `}
     >
-      <div className="mx-auto max-w-6xl py-6">
+      <div className="mx-auto max-w-6xl py-6 md:px-0 px-4">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
             <a href="#">
