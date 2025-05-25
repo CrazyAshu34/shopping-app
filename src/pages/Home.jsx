@@ -4,6 +4,9 @@ import BeautyCollection from "../sections/BeautyCollection";
 import ButtonPrimary from "../components/ButtonPrimary";
 import BeautyBanner from "../sections/BeautyBanner";
 import WhyWe from "../sections/WhyWe";
+import ExploreBeauty from "../sections/ExploreBeauty";
+import Testimonials from "../sections/Testimonials";
+import FreshGallery from "../sections/FreshGallery";
 const Home = () => {
   return (
     <>
@@ -38,6 +41,7 @@ const Home = () => {
                 shine every day.
               </h2>
             </div>
+            {/* testimonial */}
             <div className="flex flex-row">
               <img
                 src="/HomeImg/girl_logo.jpg"
@@ -61,6 +65,12 @@ const Home = () => {
       <BeautyBanner />
       {/* Why we section */}
       <WhyWe />
+      {/* ExploreBeauty */}
+      <ExploreBeauty />
+      {/* Testimonials */}
+      <Testimonials />
+      {/* FreshGallery */}
+      <FreshGallery />
     </>
   );
 };

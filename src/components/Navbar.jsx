@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-
+import purebeauty from "../assets/purebeauty.svg"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [navColor, setNavColor] = useState(false);
+  // const [navColor, setNavColor] = useState(false);
 
-  useEffect(() => {
-    function handleScroll() {
-      window.addEventListener("scroll", (event) => {
-        const scrollPosition = window.scrollY;
-        // console.log(scrollPosition);
-        if (scrollPosition >= 80) {
-          setNavColor(true);
-        } else {
-          setNavColor(false);
-        }
-      });
-    }
-    handleScroll();
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     window.addEventListener("scroll", (event) => {
+  //       const scrollPosition = window.scrollY;
+  //       // console.log(scrollPosition);
+  //       if (scrollPosition >= 80) {
+  //         setNavColor(true);
+  //       } else {
+  //         setNavColor(false);
+  //       }
+  //     });
+  //   }
+  //   handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const navigation = [
     { href: "#", text: "Home" },
@@ -42,8 +42,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <a href="#">
               <img
-                className="h-6 w-auto sm:h-7"
-                src="https://merakiui.com/images/full-logo.svg"
+                className="h-full w-[40%]"
+                src={purebeauty}
                 alt=""
               />
             </a>
@@ -145,7 +145,7 @@ const Navbar = () => {
                   />
                 </div>
                 <h3 className="mx-2 text-gray-700 lg:hidden dark:text-gray-200">
-                  Khatab wedaa
+                 Ashutosh Singh
                 </h3>
               </button>
             </div>

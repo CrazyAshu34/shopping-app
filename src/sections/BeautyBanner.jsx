@@ -13,6 +13,8 @@ const BeautyBanner = () => {
   const hasAnimatedRef = useRef(false);
   const timeoutRef = useRef(null);
   const secondCountIncrement = 10 / 150; // ≈ 0.0667
+  // 500ms
+  0 + 0.0667
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
@@ -38,7 +40,7 @@ const BeautyBanner = () => {
                           : 10,
                       lastCount:
                         mycount.lastCount < 100
-                          ? mycount.lastCount + 100 / 150
+                          ? mycount.lastCount + 100 / 150 //  0 + 0.6
                           : 100,
                     };
                   } else {
