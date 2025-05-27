@@ -44,7 +44,7 @@ const Navbar = () => {
               <img
                 className="h-full w-[40%]"
                 src={purebeauty}
-                alt=""
+                alt="icon"
               />
             </a>
 

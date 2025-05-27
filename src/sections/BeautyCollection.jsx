@@ -3,7 +3,7 @@ import ButtonPrimary from "../components/ButtonPrimary";
 const BeautyCollection = () => {
   return (
     <>
-      <div className="md:px-0 px-4 mx-auto min-h-[80vh] max-w-6xl pt-[50px] md:pt-[100px] ">
+      <div className="mx-auto max-w-6xl px-4 pt-[50px] md:px-0 md:pt-[100px]">
         <div className="mb-[2rem] flex flex-col items-center justify-center md:flex-row md:justify-between">
           <h1 className="mb-5 text-center text-[32px] font-medium md:mb-auto md:text-4xl">
             Beauty Collection
