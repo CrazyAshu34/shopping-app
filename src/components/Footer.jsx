@@ -4,7 +4,7 @@ import purebeauty from "../assets/purebeauty.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-[url('HomeImg/background_gradient.png')] bg-center bg-no-repeat bg-cover md:mt-0 mt-10">
+    <div className="bg-[url('HomeImg/background_gradient.png')] bg-center bg-no-repeat bg-cover ">
       <div className="mx-auto max-w-6xl px-4 py-10 md:px-0 md:py-20">
         {/* first section */}
         <div className="mb-8 flex flex-col items-center justify-between md:mb-20 md:flex-row">

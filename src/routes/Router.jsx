@@ -9,6 +9,8 @@ import Signup from "../pages/Signup";
 import AboutUs from "../pages/AboutUs";
 import ProductDetails from "../pages/ProductDetails";
 import Demo from "../pages/demo";
+import NotFound from "../pages/NotFound";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,9 @@ const router = createBrowserRouter([
       { path: "/about", element: <AboutUs /> },
       { path: "/cart", element: <Cart /> },
       { path: "/demo", element: <Demo /> },
+      { path: "/contact", element: <Contact /> },
+      // ...other routes
+      { path: "*", element: <NotFound /> }, // Inside MainLayout
     ],
   },
   {
@@ -28,6 +33,10 @@ const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/signup", element: <Signup /> },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

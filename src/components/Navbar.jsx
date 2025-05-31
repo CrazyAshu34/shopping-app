@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import purebeauty from "../assets/purebeauty.svg"
+import purebeauty from "../assets/purebeauty.svg";
+import { NavLink, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  console.log(location)
   // const [navColor, setNavColor] = useState(false);
 
   // useEffect(() => {
@@ -22,11 +25,11 @@ const Navbar = () => {
   // }, []);
 
   const navigation = [
-    { href: "#", text: "Home" },
-    { href: "#", text: "About Us" },
-    { href: "#", text: "Shop" },
-    { href: "#", text: "Page" },
-    { href: "#", text: "Contact Us" },
+    { path: "/", text: "Home" },
+    { path: "/about", text: "About Us" },
+    { path: "/product", text: "Shop" },
+    { path: "/demo", text: "Page" },
+    { path: "/contact", text: "Contact Us" },
   ];
 
   return (
@@ -35,25 +38,21 @@ const Navbar = () => {
     // >
     <nav
       // className={`z-50 w-full bg-[url('HomeImg/background_gradient.png')] `}
-      className={`z-50 w-full absolute top-0 left-0 `}
+      className={`absolute top-0 left-0 z-50 w-full`}
     >
-      <div className="mx-auto max-w-6xl py-6 md:px-0 px-4">
+      <div className="mx-auto max-w-6xl px-4 py-6 md:px-0">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
-            <a href="#">
-              <img
-                className="h-full w-[40%]"
-                src={purebeauty}
-                alt="icon"
-              />
-            </a>
+            <NavLink to="/">
+              <img className="h-full w-[40%]" src={purebeauty} alt="icon" />
+            </NavLink>
 
             {/* Mobile menu button */}
             <div className="flex lg:hidden">
               <button
                 onClick={() => setIsOpen((prev) => !prev)}
                 type="button"
-                className="text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none dark:text-gray-200 dark:hover:text-gray-400 dark:focus:text-gray-400"
+                className="text-black-500 hover:text-black-600 focus:text-black-600 focus:outline-none dark:text-black dark:hover:text-black dark:focus:text-black"
                 aria-label="toggle menu"
               >
                 {!isOpen ? (
@@ -91,23 +90,24 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu open: "block", Menu closed: "hidden" */}
+          {/* Mobile and desktop both Menu" */}
+          {/* cursor pointer none */}
           <div
-            className={`mt-[1rem] md:mt-auto h-lvh md:h-auto absolute inset-x-0 z-20 w-full bg-gray-800 md:bg-transparent px-6 py-4 transition-all duration-300 ease-in-out lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 ${
+            className={`pointer-events-auto absolute inset-x-0 z-20 mt-[1rem] h-lvh w-full bg-[#F38E8C] px-6 py-4 transition-all duration-300 ease-in-out md:mt-auto md:h-auto md:bg-transparent lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 ${
               isOpen
                 ? "translate-x-0 opacity-100"
-                : "pointer-events-none -translate-x-full opacity-0"
+                : "pointer-events -translate-x-full opacity-0"
             }`}
           >
             <div className="-mx-6 flex flex-col lg:mx-8 lg:flex-row lg:items-center">
               {navigation.map((item) => (
-                <a
+                <NavLink
                   key={item.text}
-                  href={item.href}
-                  className="mx-3 mt-2 transform rounded-md px-3 py-2 text-gray-700 transition-colors duration-300 hover:bg-gray-100 lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700"
+                  to={item.path}
+                  className={`mx-3 mt-2 transform rounded-md px-3 py-2 transition-colors duration-300 hover:!text-white lg:mt-0 ${location.pathname === item.path ? "text-white" : "text-[#1c0b0c]"}`}
                 >
                   {item.text}
-                </a>
+                </NavLink>
               ))}
             </div>
 
@@ -145,7 +145,7 @@ const Navbar = () => {
                   />
                 </div>
                 <h3 className="mx-2 text-gray-700 lg:hidden dark:text-gray-200">
-                 Ashutosh Singh
+                  Ashutosh Singh
                 </h3>
               </button>
             </div>

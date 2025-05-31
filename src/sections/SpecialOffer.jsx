@@ -1,27 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ButtonPrimary from "../components/ButtonPrimary";
+
 const SpecialOffer = () => {
+  const [timeLeft, setTimeLeft] = useState(0);
+
+  useEffect(() => {
+    const totalSeconds = 23 * 3600 + 20 * 60 + 10;
+    const now = Date.now();
+    let endTime = localStorage.getItem("special-offer-end-time");
+
+    if (!endTime) {
+      endTime = now + totalSeconds * 1000;
+      localStorage.setItem("special-offer-end-time", endTime);
+    } else {
+      endTime = parseInt(endTime);
+    }
+
+    const updateTimer = () => {
+      const secondsLeft = Math.floor((endTime - Date.now()) / 1000);
+      setTimeLeft(secondsLeft > 0 ? secondsLeft : 0);
+    };
+
+    updateTimer(); // update immediately
+    const interval = setInterval(() => {
+      updateTimer();
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatTime = (seconds) => {
+    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const s = String(seconds % 60).padStart(2, "0");
+    return { h, m, s };
+  };
+
+  const { h, m, s } = formatTime(timeLeft);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:px-0 md:py-28">
-      {/* left sec. */}
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="">
+        <div>
           <p className="text-center text-[32px] leading-[1.3] font-medium md:text-start md:text-[2.5rem]">
             Special Offers: Curated Bundles Just for You
           </p>
           <div className="my-8 flex gap-3">
-            <div className="flex md:h-[132px] h-[120px] w-[162px] flex-col items-center justify-center border bg-[#fff6ed]">
-              <p className="text-[36px] font-medium md:text-[48px]">01</p>
-              <p className="text-[16px] font-medium md:text-[18px]">hour</p>
-            </div>
-            <div className="flex md:h-[132px] h-[120px] w-[162px] flex-col items-center justify-center border bg-[#fff6ed]">
-              <p className="text-[36px] font-medium md:text-[48px]">47</p>
-              <p className="text-[16px] font-medium md:text-[18px]">minute</p>
-            </div>
-            <div className="flex md:h-[132px] h-[120px] w-[162px] flex-col items-center justify-center border bg-[#fff6ed]">
-              <p className="text-[36px] font-medium md:text-[48px]">00</p>
-              <p className="text-[16px] font-medium md:text-[18px]">second</p>
-            </div>
+            {[
+              { label: "hour", value: h },
+              { label: "minute", value: m },
+              { label: "second", value: s },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex h-[120px] w-[162px] flex-col items-center justify-center border bg-[#fff6ed] md:h-[132px]"
+              >
+                <p className="text-[36px] font-medium md:text-[48px]">
+                  {item.value}
+                </p>
+                <p className="text-[16px] font-medium md:text-[18px]">
+                  {item.label}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="flex flex-col justify-center md:justify-start">
             <h2 className="mb-6 text-center md:text-start">
@@ -34,7 +75,6 @@ const SpecialOffer = () => {
           </div>
         </div>
 
-        {/* right image */}
         <div className="mt-12 flex md:mt-0 md:justify-end">
           <div className="relative">
             <img
