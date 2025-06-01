@@ -1,6 +1,10 @@
 import React from "react";
 import ButtonPrimary from "../components/ButtonPrimary";
+import { useNavigate } from "react-router-dom";
+
 const BeautyCollection = () => {
+  const navigate = useNavigate();
+  const key = 101;
   return (
     <>
       <div className="mx-auto max-w-6xl px-4 pt-[50px] md:px-0 md:pt-[100px]">
@@ -15,7 +19,10 @@ const BeautyCollection = () => {
         <hr />
         <div className="mt-20">
           <div className="flex flex-col justify-between gap-10 md:flex-row md:justify-between md:gap-0">
-            <div className="flex h-[530px] w-[100%] flex-col justify-between bg-[#FFF8ED] md:h-[530px] md:w-[360px]">
+            <div
+              onClick={() => navigate(`/products/${key}`)}
+              className="flex h-[530px] w-[100%] cursor-pointer flex-col justify-between bg-[#FFF8ED] md:h-[530px] md:w-[360px]"
+            >
               <img
                 src="/HomeImg/cat_1.png"
                 alt="item"
@@ -29,7 +36,10 @@ const BeautyCollection = () => {
                 </p>
               </div>
             </div>
-            <div className="flex h-[530px] w-[100%] flex-col justify-between bg-[#FFF8ED] md:h-[530px] md:w-[360px]">
+            <div
+              onClick={() => navigate(`/products/${key}`)}
+              className="flex h-[530px] w-[100%] cursor-pointer flex-col justify-between bg-[#FFF8ED] md:h-[530px] md:w-[360px]"
+            >
               <img
                 src="/HomeImg/cat_2.png"
                 alt="item"
@@ -44,7 +54,10 @@ const BeautyCollection = () => {
               </div>
             </div>
 
-            <div className="flex h-[530px] w-[100%] flex-col justify-between bg-[#FFF8ED] md:h-[530px] md:w-[360px]">
+            <div
+              onClick={() => navigate(`/products/${key}`)}
+              className="flex h-[530px] w-[100%] cursor-pointer flex-col justify-between bg-[#FFF8ED] md:h-[530px] md:w-[360px]"
+            >
               <img
                 src="/HomeImg/cat_3.png"
                 alt="item"
